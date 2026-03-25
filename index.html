@@ -3,96 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha Centauri</title>
+    <title>Nexum Automation - Proyecto Integrador</title>
     <style>
-        /* ESTILOS BÁSICOS */
+        /* ESTILOS GLOBALES */
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #f4f7f6; }
         header { background: white; text-align: center; padding: 20px; border-bottom: 2px solid #3F51B5; }
-        header img { max-width: 250px; height: auto; }
+        header img { max-width: 200px; height: auto; }
 
         /* NAVEGACIÓN */
         .navbar { background-color: #222; position: sticky; top: 0; z-index: 1000; }
         .nav-container { display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; }
-        .nav-link { color: white; padding: 15px 25px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; background: none; font-size: 16px; }
+        .nav-link { color: white; padding: 15px 25px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; background: none; font-size: 16px; transition: 0.3s; }
         .nav-link:hover { background-color: #3F51B5; }
         .nav-link.active { background-color: #3F51B5; }
 
-        /* CONTENIDO */
-        .container { max-width: 1000px; margin: 30px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); min-height: 400px; }
+        /* CONTENEDORES */
+        .container { max-width: 1100px; margin: 30px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); min-height: 500px; }
         .tab-content { display: none; animation: fadeIn 0.5s; }
         .tab-content.active { display: block; }
         
-        h2 { color: #3F51B5; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
-        .member-card { background: #f9f9f9; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #ddd; }
+        h2 { color: #3F51B5; border-bottom: 2px solid #eee; padding-bottom: 10px; text-align: center; }
+        h3 { color: #333; margin-top: 10px; }
 
-        footer { text-align: center; padding: 20px; font-size: 14px; color: #777; }
+        /* GRID DE IDENTIDAD (Misión/Visión) */
+        .identity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
+        .identity-card { background: #f9f9f9; padding: 20px; border-radius: 8px; border-top: 5px solid #757575; }
+
+        /* GRID DE EQUIPO */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .member-card { background: white; padding: 25px; border-radius: 12px; text-align: center; border: 1px solid #eee; transition: transform 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .member-card:hover { transform: translateY(-5px); }
+        .member-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 4px solid #3F51B5; margin-bottom: 15px; }
+        
+        .github-btn { display: inline-block; margin-top: 15px; padding: 8px 16px; background-color: #1a1a1a; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; transition: 0.3s; }
+        .github-btn:hover { background-color: #444; }
+
+        footer { text-align: center; padding: 30px; font-size: 14px; color: #777; background: #eee; margin-top: 50px; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .identity-grid { grid-template-columns: 1fr; }
+            .container { margin: 10px; padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="assets/Logo.png" alt="Alpha Centauri Logo">
-        <h1>Alpha Centauri</h1>
+        <img src="assets/img/logo.png" alt="Nexum Automation Logo">
     </header>
 
     <nav class="navbar">
         <div class="nav-container">
             <button class="nav-link active" onclick="showTab(event, 'inicio')">Inicio</button>
             <button class="nav-link" onclick="showTab(event, 'proyecto')">Proyecto</button>
-            <button class="nav-link" onclick="showTab(event, 'equipo')">Integrantes</button>
+            <button class="nav-link" onclick="showTab(event, 'equipo')">Equipo</button>
         </div>
     </nav>
 
     <div class="container">
+        
         <section id="inicio" class="tab-content active">
-            <h2>Contexto del Grupo</h2>
-            <p>Somos el grupo <strong>Nexum Automation</strong>, conformado para la asignatura <strong>Automatización de Procesos de Manufactura</strong> en la Universidad Nacional de Colombia (2026).</p>
-            <p>Nuestro enfoque principal es la integración de tecnologías de la Industria 4.0 para optimizar líneas de producción reales, buscando eficiencia operativa y mejoras ergonómicas mediante el análisis técnico y la simulación.</p>
+            <h2>Contexto Operativo: Coca-Cola FEMSA</h2>
+            <p>La presente página ha sido desarrollada como parte del proyecto integrador de la asignatura <strong>Automatización de Procesos de Manufactura</strong> de la Universidad Nacional de Colombia, periodo 2026.</p>
+            <p>El propósito es exponer la evaluación operativa y la propuesta de automatización de las líneas de producción analizadas en la visita técnica a la planta, integrando tecnologías de <strong>Industria 4.0</strong> para mejorar el desempeño operativo y la eficiencia global (OEE).</p>
+            
+            <div class="identity-grid">
+                <div class="identity-card">
+                    <h3>🎯 Misión</h3>
+                    <p>Desarrollar propuestas de mejora y automatización aplicando conocimientos de ingeniería para optimizar procesos industriales reales, con énfasis en seguridad y eficiencia.</p>
+                </div>
+                <div class="identity-card">
+                    <h3>🔭 Visión</h3>
+                    <p>Lograr el diseño exitoso de una propuesta de automatización eficiente y realista que sea aplicable a entornos industriales modernos.</p>
+                </div>
+            </div>
         </section>
 
         <section id="proyecto" class="tab-content">
-            <h2>Propuesta de Automatización</h2>
-            <p>El proyecto consiste en el diseño y evaluación de una <strong>Celda de Manufactura Robotizada</strong> para la planta de Coca-Cola FEMSA.</p>
-            <ul>
-                <li><strong>Objetivo:</strong> Automatizar el paletizado de garrafones de agua Brisa (20L).</li>
-                <li><strong>Alcance:</strong> Reducción de tiempos de ciclo y eliminación de riesgos ergonómicos para los operarios.</li>
-                <li><strong>Tecnologías:</strong> Brazos robóticos industriales, sensores de proximidad e interfaces HMI.</li>
-            </ul>
+            <h2>Propuesta del Proyecto</h2>
+            <p>Nuestro proyecto se enfoca en la creación de <strong>Nexum Automation</strong>, una consultora académica encargada de estructurar mejoras técnicas para Coca-Cola FEMSA.</p>
+            <div style="background: #eef2ff; padding: 20px; border-radius: 8px; border-left: 5px solid #3F51B5;">
+                <p><strong>Foco principal:</strong> Automatización de la línea de Agua Brisa (Garrafón 20L) mediante una celda robotizada para eliminar cuellos de botella ergonómicos.</p>
+            </div>
+            <p>Se integran herramientas de análisis como VSM (Value Stream Mapping), diagramas de flujo (DOP/DAP) y simulaciones avanzadas para validar el retorno de inversión y la viabilidad técnica.</p>
         </section>
 
         <section id="equipo" class="tab-content">
-            <h2>Nuestro Equipo</h2>
+            <h2>El Equipo Consultor</h2>
             <div class="team-grid">
-                <div class="member-card"><strong>Integrante 1</strong><br>Ingeniería Mecatrónica</div>
-                <div class="member-card"><strong>Integrante 2</strong><br>Ingeniería Mecánica</div>
-                <div class="member-card"><strong>Integrante 3</strong><br>Ingeniería Industrial</div>
-                <div class="member-card"><strong>Integrante 4</strong><br>Ingeniería Mecatrónica</div>
-                <div class="member-card"><strong>Integrante 5</strong><br>Ingeniería Mecánica</div>
-                <div class="member-card"><strong>Integrante 6</strong><br>Ingeniería Electrónica</div>
+                
+                <div class="member-card">
+                    <img class="member-photo" src="assets/img/equipo/Ariadna.png" alt="Ariadna Contreras">
+                    <h3>Ariadna Contreras Nossa</h3>
+                    <p><strong>Gerente Ejecutiva</strong></p>
+                    <p>Dirección estratégica, definición de procesos (DOP) y supervisión de hitos.</p>
+                    <a href="https://github.com/AriadnaCon" target="_blank" class="github-btn">📁 Ver GitHub</a>
+                </div>
+
+                <div class="member-card">
+                    <img class="member-photo" src="assets/img/equipo/Camilo.jpeg" alt="Johan Patiño">
+                    <h3>Johan Camilo Patiño</h3>
+                    <p><strong>Gerente de Proyectos</strong></p>
+                    <p>Gestión del repositorio técnico, sitio web y documentación VSM.</p>
+                    <a href="https://github.com/CamiPati" target="_blank" class="github-btn">📁 Ver GitHub</a>
+                </div>
+
+                <div class="member-card">
+                    <img class="member-photo" src="assets/img/equipo/Esteban.png" alt="Esteban Durán">
+                    <h3>Esteban Durán Jiménez</h3>
+                    <p><strong>Líder de Diseño</strong></p>
+                    <p>Modelos en Plant Simulation y diseño conceptual de celdas.</p>
+                    <a href="https://github.com/eduran777" target="_blank" class="github-btn">📁 Ver GitHub</a>
+                </div>
+
+                <div class="member-card">
+                    <img class="member-photo" src="assets/img/equipo/JulianaGR.png" alt="Juliana Góngora">
+                    <h3>Juliana Góngora R.</h3>
+                    <p><strong>Líder de Diseño</strong></p>
+                    <p>Desarrollo de diagramas DAP y evaluación de desempeño.</p>
+                    <a href="https://github.com/Juligonras" target="_blank" class="github-btn">📁 Ver GitHub</a>
+                </div>
+
+                <div class="member-card">
+                    <img class="member-photo" src="assets/img/equipo/JuliPulido.jpeg" alt="Julián Pulido">
+                    <h3>Julián David Pulido</h3>
+                    <p><strong>Gerente de Automatización</strong></p>
+                    <p>Lógica Ladder, sistemas SCADA e integración OPC.</p>
+                    <a href="https://github.com/jdpulidoca/" target="_blank" class="github-btn">📁 Ver GitHub</a>
+                </div>
+
+                <div class="member-card">
+                    <img class="member-photo" src="assets/img/equipo/Oscar.jpeg" alt="Oscar Siabato">
+                    <h3>Oscar J. Siabato León</h3>
+                    <p><strong>Gerente Financiero</strong></p>
+                    <p>Desarrollo de presupuestos y cálculo de indicadores TIR/VPN.</p>
+                    <a href="https://github.com/Oscarsiabato18" target="_blank" class="github-btn">📁 Ver GitHub</a>
+                </div>
+
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Nexum Automation - Universidad Nacional de Colombia</p>
+        <p>Documentación Técnica &copy; 2026 - Nexum Automation | Universidad Nacional de Colombia</p>
     </footer>
 
     <script>
         function showTab(evt, tabId) {
-            // Ocultar todas las secciones
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
 
-            // Quitar clase active de los botones
             const links = document.querySelectorAll('.nav-link');
             links.forEach(link => link.classList.remove('active'));
 
-            // Mostrar la sección seleccionada y activar el botón
             document.getElementById(tabId).classList.add('active');
             evt.currentTarget.classList.add('active');
+            
+            // Hacer scroll hacia arriba suavemente al cambiar pestaña
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 </body>
