@@ -86,6 +86,89 @@
             margin: 0;
         }
 
+        /* ====== Metodología ====== */
+        .hipotesis-block {
+            background: #e3f2fd;
+            border-left: 5px solid #00bcd4;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 26px;
+            margin: 25px 0;
+            text-align: justify;
+        }
+        .hipotesis-block h3 { margin-top: 0; }
+        .variables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin: 25px 0;
+        }
+        .variable-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-top: 4px solid #00bcd4;
+            padding: 18px;
+        }
+        .variable-card h4 {
+            color: #1a237e;
+            margin: 0 0 10px 0;
+            font-size: 1em;
+        }
+        .variable-card ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.92em;
+            color: #444;
+        }
+        .variable-card li { margin-bottom: 6px; }
+        .materiales-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px 25px;
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .materiales-list li {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.95em;
+        }
+        .materiales-list li::before {
+            content: "⚙ ";
+            color: #00bcd4;
+            font-weight: bold;
+        }
+        .procedimiento-steps { counter-reset: paso; margin-top: 20px; }
+        .paso {
+            position: relative;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px 20px 20px 70px;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+        .paso::before {
+            counter-increment: paso;
+            content: counter(paso);
+            position: absolute;
+            left: 18px;
+            top: 20px;
+            width: 36px;
+            height: 36px;
+            background: #1a237e;
+            color: #00bcd4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .paso h4 { color: #1a237e; margin: 0 0 8px 0; }
+        .paso p { margin: 0; font-size: 0.95em; color: #444; }
+
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 30px; }
         .member-card { background: white; padding: 25px; border-radius: 15px; text-align: center; border: 1px solid #eee; transition: 0.3s; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .member-card:hover { transform: translateY(-8px); border-color: #00bcd4; }
@@ -117,6 +200,7 @@
             <button class="nav-link active" onclick="showTab(event, 'inicio')">Inicio</button>
             <button class="nav-link" onclick="showTab(event, 'proyecto')">Proyecto</button>
             <button class="nav-link" onclick="showTab(event, 'Informe')">Marco Teórico</button>
+            <button class="nav-link" onclick="showTab(event, 'metodologia')">Metodología</button>
             <button class="nav-link" onclick="showTab(event, 'equipo')">Equipo</button>
         </div>
     </nav>
@@ -235,6 +319,84 @@
             <div class="marco-section">
                 <h3>Circuito Slayer Exciter</h3>
                 <p>El prototipo utiliza un circuito oscilador tipo <em>Slayer Exciter</em>, el cual permite generar oscilaciones de alta frecuencia en una bobina primaria o emisora. Aunque se trata de una implementación sencilla, resulta adecuada para visualizar fenómenos de inducción, resonancia y acoplamiento magnético en una escala experimental accesible.</p>
+            </div>
+        </section>
+
+        <!-- ======= METODOLOGÍA ======= -->
+        <section id="metodologia" class="tab-content">
+            <h2>Metodología</h2>
+
+            <div class="hipotesis-block">
+                <h3>Hipótesis</h3>
+                <p>Mientras que la distancia entre la bobina emisora y la bobina receptora sea menor y se encuentren alineadas, entonces la transferencia de energía será mayor. Esto será evidenciado al observar un mayor voltaje inducido y mayor intensidad luminosa en el LED. En cambio, al aumentar la distancia o desalinear las bobinas, la transferencia disminuirá debido a la reducción del <strong>acoplamiento magnético</strong>.</p>
+            </div>
+
+            <div class="marco-section">
+                <h3>Variables del Experimento</h3>
+                <div class="variables-grid">
+                    <div class="variable-card">
+                        <h4>Variables Independientes</h4>
+                        <ul>
+                            <li><strong>Principal:</strong> distancia entre la bobina emisora y la bobina receptora.</li>
+                            <li><strong>Secundaria:</strong> alineación entre bobinas.</li>
+                        </ul>
+                    </div>
+                    <div class="variable-card">
+                        <h4>Variables Dependientes</h4>
+                        <ul>
+                            <li>Voltaje medido en la bobina receptora.</li>
+                            <li>Corriente en el LED.</li>
+                            <li>Potencia estimada.</li>
+                        </ul>
+                    </div>
+                    <div class="variable-card">
+                        <h4>Variables Controladas</h4>
+                        <ul>
+                            <li>Voltaje de alimentación.</li>
+                            <li>Número de espiras.</li>
+                            <li>Diámetro de las bobinas.</li>
+                            <li>Tipo de carga.</li>
+                            <li>Circuito oscilador utilizado.</li>
+                            <li>Condiciones generales del montaje.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marco-section">
+                <h3>Materiales</h3>
+                <ul class="materiales-list">
+                    <li>Batería AA 1.5 \(V\)</li>
+                    <li>Transistor de potencia 2N2222</li>
+                    <li>Resistencias</li>
+                    <li>Diodo o LED de prueba</li>
+                    <li>Alambre de cobre esmaltado</li>
+                    <li>Multímetro</li>
+                    <li>Regla o calibrador</li>
+                    <li>Estructura de soporte para mantener constante la distancia entre bobinas</li>
+                </ul>
+            </div>
+
+            <div class="marco-section">
+                <h3>Procedimiento</h3>
+                <div class="procedimiento-steps">
+                    <div class="paso">
+                        <h4>Elaboración de la bobina transmisora</h4>
+                        <p>Para empezar, se elaboró la bobina transmisora empleando un molde circular de aproximadamente 3 cm de diámetro. Sobre dicho molde se enrollaron inicialmente 17 espiras de alambre de cobre esmaltado. Posteriormente, se dejó una derivación central formando un pequeño lazo de alambre para obtener un conector intermedio para la bobina y se continuó el enrollado con otras 17 espiras adicionales en la misma dirección. Como resultado, se obtuvo una bobina con tres terminales: dos correspondientes a los extremos del conductor y uno ubicado en la toma central.</p>
+                    </div>
+                    <div class="paso">
+                        <h4>Construcción de la bobina receptora</h4>
+                        <p>La bobina receptora se construyó utilizando el mismo diámetro de molde. Para ello se enrollaron 34 espiras continuas de alambre de cobre esmaltado. Al finalizar el enrollado, se dejaron libres los dos extremos del conductor, los cuales fueron conectados directamente a los terminales de un diodo LED.</p>
+                    </div>
+                    <div class="paso">
+                        <h4>Implementación del circuito transmisor</h4>
+                        <p>El circuito transmisor se implementó utilizando un transistor NPN 2N2222A configurado como oscilador autoexcitado. Uno de los extremos de la bobina transmisora se conectó al colector del transistor, mientras que el otro extremo se conectó a una resistencia de 5 \(k\Omega\). El terminal libre de la resistencia se unió a la base del transistor para proporcionar la polarización necesaria.</p>
+                    </div>
+                    <div class="paso">
+                        <h4>Conexión de la alimentación</h4>
+                        <p>Posteriormente, el terminal central de la bobina transmisora se conectó al polo positivo de la batería de 1,5 V, mientras que el polo negativo de la batería se conectó al emisor del transistor. Esta configuración permite la generación de oscilaciones eléctricas en la bobina transmisora.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
