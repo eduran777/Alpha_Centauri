@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    
+<script>
+  MathJax = { tex: { inlineMath: [['\\(', '\\)']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpha Centauri | Startup de Innovación</title>
@@ -132,6 +137,48 @@
                 </ul>
             </div>
         </section>
+
+
+        <section id="proyecto" class="tab-content">
+    <div class="project-header">
+        <h2 style="color: white; border: none; margin: 0;">Proyecto: WPT-Link (Wireless Power Transfer)</h2>
+        <p>Implementación de Inducción Electromagnética Resonante</p>
+    </div>
+
+    <p>El proyecto <strong>WPT-Link</strong> busca materializar el concepto del "Efecto Tesla" mediante un circuito oscilador de alta frecuencia capaz de transmitir potencia eléctrica a través del aire sin necesidad de conductores físicos.</p>
+
+    <div class="project-grid">
+        <div class="project-card">
+            <h3>Fundamento: Ley de Faraday-Lenz</h3>
+            <p>La transferencia inalámbrica se basa en la generación de un <strong>campo magnético variable</strong> en el tiempo. Cuando una corriente alterna circula por la bobina emisora, el cambio de flujo magnético induce una fuerza electromotriz en la bobina receptora, descrita por:</p>
+            <div style="text-align: center; margin: 14px 0; font-size: 1.1em;">
+                \(\mathcal{E} = -N\dfrac{d\Phi_B}{dt}\)
+            </div>
+            <p style="font-size: 0.9em; color: #555;">donde \(\mathcal{E}\) es la FEM inducida, \(N\) el número de espiras y \(\Phi_B\) el flujo magnético. El signo negativo representa la <strong>Ley de Lenz</strong>: la corriente inducida se opone al cambio que la produce.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Acoplamiento Magnético y Resonancia</h3>
+            <p>La eficiencia de transferencia depende del <strong>acoplamiento magnético</strong> entre bobinas, afectado por distancia, orientación, diámetro y frecuencia. Al operar cerca de la <strong>frecuencia de resonancia</strong> del sistema LC, la transferencia de energía se maximiza:</p>
+            <div style="text-align: center; margin: 14px 0; font-size: 1.1em;">
+                \(f_0 = \dfrac{1}{2\pi\sqrt{LC}}\)
+            </div>
+            <p style="font-size: 0.9em; color: #555;">donde \(L\) es la inductancia y \(C\) la capacitancia equivalente. El prototipo emplea un circuito <strong>Slayer Exciter</strong> para generar oscilaciones de alta frecuencia en la bobina primaria.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 8px;">
+        <h3 style="margin-top: 0;">Roadmap de Desarrollo</h3>
+        <ul>
+            <li><strong>Fase 1:</strong> Optimización del circuito oscilador y cálculo de inductancias.</li>
+            <li><strong>Fase 2:</strong> Prototipado de bobinas planas para mejorar la portabilidad.</li>
+            <li><strong>Fase 3:</strong> Diseño de carcasa ergonómica y pruebas de eficiencia de transmisión.</li>
+        </ul>
+    </div>
+</section>
+
+
+        
 
         <section id="equipo" class="tab-content">
             <h2>El Equipo Consultor</h2>
