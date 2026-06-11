@@ -96,6 +96,102 @@
             text-align: justify;
         }
         .hipotesis-block h3 { margin-top: 0; }
+          /* ====== Resultados ====== */
+        .resultados-summary {
+            background: #e3f2fd;
+            border-left: 5px solid #00bcd4;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 26px;
+            margin: 25px 0;
+            text-align: justify;
+        }
+        
+        .resultados-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin: 25px 0;
+        }
+        
+        .resultado-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-top: 4px solid #3949ab;
+            padding: 18px;
+        }
+        
+        .resultado-card h4 {
+            color: #1a237e;
+            margin: 0 0 10px 0;
+            font-size: 1em;
+        }
+        
+        .resultado-card p {
+            font-size: 0.93em;
+            color: #444;
+            margin: 0;
+            text-align: justify;
+        }
+        
+        .resultados-table-container {
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+        
+        .resultados-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            background: white;
+        }
+        
+        .resultados-table th {
+            background: #1a237e;
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .resultados-table td {
+            padding: 11px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .resultados-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .resultados-table tr:hover {
+            background: #e3f2fd;
+        }
+        
+        .chart-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #00bcd4;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .chart-placeholder img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+        
+        .observacion-list {
+            background: #f0f4ff;
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+        
+        .observacion-list li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
         .variables-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -200,6 +296,7 @@
             <button class="nav-link active" onclick="showTab(event, 'inicio')">Inicio</button>
             <button class="nav-link" onclick="showTab(event, 'proyecto')">Proyecto</button>
             <button class="nav-link" onclick="showTab(event, 'Informe')">Marco Teórico</button>
+            <button class="nav-link" onclick="showTab(event, 'resultados')">Resultados</button>
             <button class="nav-link" onclick="showTab(event, 'metodologia')">Metodología</button>
             <button class="nav-link" onclick="showTab(event, 'equipo')">Equipo</button>
         </div>
@@ -397,6 +494,179 @@
                         <p>Posteriormente, el terminal central de la bobina transmisora se conectó al polo positivo de la batería de 1,5 V, mientras que el polo negativo de la batería se conectó al emisor del transistor. Esta configuración permite la generación de oscilaciones eléctricas en la bobina transmisora.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+        
+                <!-- ======= RESULTADOS ======= -->
+        <section id="resultados" class="tab-content">
+            <h2>Análisis de Resultados</h2>
+        
+            <div class="resultados-summary">
+                <h3>Caracterización del prototipo</h3>
+                <p>
+                    Para evaluar el comportamiento del sistema WPT-Link se analizó la variación del voltaje inducido
+                    en la bobina receptora al modificar la distancia respecto a la bobina transmisora. El montaje empleó
+                    una bobina transmisora de 35 vueltas con derivación central, distribuida en 17 vueltas iniciales,
+                    una toma intermedia y 18 vueltas adicionales. Esta bobina fue excitada mediante un transistor
+                    NPN 2N2222, polarizado con una resistencia de \(6200\,\Omega\), permitiendo generar una corriente
+                    pulsante de alta frecuencia.
+                </p>
+                <p>
+                    La bobina receptora se construyó de forma sencilla y se conectó directamente a un LED. La intensidad
+                    luminosa del LED permitió observar cualitativamente la energía recibida, mientras que el voltaje
+                    inducido permitió caracterizar la tendencia de transferencia frente a la distancia entre bobinas.
+                </p>
+            </div>
+        
+            <div class="resultados-grid">
+                <div class="resultado-card">
+                    <h4>Bobina transmisora</h4>
+                    <p>
+                        Construida con 35 vueltas en total y derivación central. La toma intermedia permite la
+                        realimentación necesaria para el funcionamiento oscilatorio del circuito con el transistor 2N2222.
+                    </p>
+                </div>
+        
+                <div class="resultado-card">
+                    <h4>Bobina receptora</h4>
+                    <p>
+                        Elaborada con alambre de cobre esmaltado y conectada directamente a un LED. Su función fue captar
+                        parte del flujo magnético variable generado por la bobina transmisora.
+                    </p>
+                </div>
+        
+                <div class="resultado-card">
+                    <h4>Variable analizada</h4>
+                    <p>
+                        La variable principal fue el voltaje inducido en función de la distancia entre bobinas. También se
+                        observó la intensidad luminosa del LED como indicador cualitativo de transferencia de energía.
+                    </p>
+                </div>
+            </div>
+        
+            <div class="marco-section">
+                <h3>Datos obtenidos</h3>
+                <p>
+                    La siguiente tabla resume la caracterización del voltaje inducido en la bobina receptora para distintas
+                    separaciones entre bobinas. Se observa una disminución progresiva del voltaje a medida que aumenta la
+                    distancia, lo cual evidencia la reducción del acoplamiento magnético.
+                </p>
+        
+                <div class="resultados-table-container">
+                    <table class="resultados-table">
+                        <thead>
+                            <tr>
+                                <th>Distancia [cm]</th>
+                                <th>Voltaje inducido [V]</th>
+                                <th>Respuesta observada en el LED</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0.0</td>
+                                <td>3.18</td>
+                                <td>Encendido alto y estable</td>
+                            </tr>
+                            <tr>
+                                <td>0.5</td>
+                                <td>3.02</td>
+                                <td>Encendido alto</td>
+                            </tr>
+                            <tr>
+                                <td>1.0</td>
+                                <td>2.51</td>
+                                <td>Encendido medio-alto</td>
+                            </tr>
+                            <tr>
+                                <td>1.5</td>
+                                <td>2.27</td>
+                                <td>Encendido medio</td>
+                            </tr>
+                            <tr>
+                                <td>2.0</td>
+                                <td>1.76</td>
+                                <td>Encendido bajo pero visible</td>
+                            </tr>
+                            <tr>
+                                <td>2.5</td>
+                                <td>1.53</td>
+                                <td>Encendido débil</td>
+                            </tr>
+                            <tr>
+                                <td>3.0</td>
+                                <td>1.03</td>
+                                <td>Encendido muy débil</td>
+                            </tr>
+                            <tr>
+                                <td>3.5</td>
+                                <td>0.78</td>
+                                <td>Intermitente o casi apagado</td>
+                            </tr>
+                            <tr>
+                                <td>4.0</td>
+                                <td>0.39</td>
+                                <td>Sin encendido apreciable</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+            <div class="marco-section">
+                <h3>Gráfica distancia vs voltaje inducido</h3>
+                <p>
+                    La gráfica permite visualizar la tendencia descendente del voltaje inducido conforme aumenta la
+                    separación entre bobinas. Este comportamiento es coherente con la Ley de Faraday-Lenz, ya que al
+                    aumentar la distancia disminuye el flujo magnético que atraviesa la bobina receptora.
+                </p>
+        
+                <div class="chart-placeholder">
+                    <img src="assets/grafica_resultados.png" alt="Gráfica de voltaje inducido en función de la distancia entre bobinas">
+                    <p style="font-size: 0.9em; color: #555; margin-top: 12px;">
+                        Figura. Variación del voltaje inducido en la bobina receptora en función de la distancia.
+                    </p>
+                </div>
+            </div>
+        
+            <div class="marco-section">
+                <h3>Análisis físico del comportamiento</h3>
+                <p>
+                    La tendencia observada se explica porque la bobina transmisora genera un campo magnético variable
+                    en el tiempo. Cuando la bobina receptora está próxima y alineada, una mayor fracción del flujo
+                    magnético atraviesa sus espiras, induciendo un voltaje suficiente para encender el LED. Al separar
+                    las bobinas, el flujo magnético acoplado disminuye y, por tanto, también se reduce la fuerza
+                    electromotriz inducida.
+                </p>
+        
+                <p>
+                    El transistor 2N2222 cumple un papel fundamental, ya que transforma la alimentación continua en una
+                    corriente pulsante de alta frecuencia. Sin esta conmutación, el campo magnético sería prácticamente
+                    constante y no se induciría un voltaje sostenido en la bobina receptora. Por ello, el circuito
+                    transmisor funciona como un oscilador sencillo que permite demostrar experimentalmente la transferencia
+                    inalámbrica de energía.
+                </p>
+            </div>
+        
+            <div class="observacion-list">
+                <h3>Observaciones principales</h3>
+                <ul>
+                    <li>El mayor voltaje inducido se obtuvo cuando las bobinas estaban muy próximas y alineadas.</li>
+                    <li>La intensidad del LED disminuyó conforme aumentó la distancia entre bobinas.</li>
+                    <li>A partir de aproximadamente \(3\,cm\), el encendido del LED se volvió débil o intermitente.</li>
+                    <li>La desalineación lateral redujo la estabilidad del encendido, incluso manteniendo la misma distancia.</li>
+                    <li>El comportamiento del prototipo confirma que la transferencia inductiva es muy sensible a la geometría del montaje.</li>
+                </ul>
+            </div>
+        
+            <div class="resultados-summary">
+                <h3>Conclusión del análisis</h3>
+                <p>
+                    El prototipo permitió comprobar que una bobina transmisora excitada mediante un transistor 2N2222
+                    puede generar un campo magnético oscilante capaz de inducir voltaje en una bobina receptora cercana.
+                    Sin embargo, la transferencia de energía disminuye rápidamente al aumentar la distancia, lo que
+                    evidencia la necesidad de optimizar la geometría de las bobinas, la frecuencia de operación y la
+                    etapa receptora para futuras versiones del sistema.
+                </p>
             </div>
         </section>
 
